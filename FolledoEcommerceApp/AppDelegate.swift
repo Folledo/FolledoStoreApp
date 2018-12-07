@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       // Override point for customization after application launch.
       
+      
       deleteProducts() //PB ep10 0mins this delete products so we can refresh and load products again when the app starts to avoid duplications
       loadProducts() //PB ep9 38mins
       

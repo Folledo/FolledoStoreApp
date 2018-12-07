@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E08F0B021AB964D00A1F213 /* UserRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08F0AF21AB964D00A1F213 /* UserRating.swift */; };
+		7E22746821B8F2FB004A9EFE /* QuantityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E22746721B8F2FB004A9EFE /* QuantityTableViewController.swift */; };
+		7EE84DDE21B5066600D80208 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE84DDD21B5066600D80208 /* UIImage+extension.swift */; };
 		7EEAAE8A21A1CCDA002118A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAAE8921A1CCDA002118A1 /* AppDelegate.swift */; };
 		7EEAAE8F21A1CCDA002118A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EEAAE8D21A1CCDA002118A1 /* Main.storyboard */; };
 		7EEAAE9121A1CCDF002118A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EEAAE9021A1CCDF002118A1 /* Assets.xcassets */; };
@@ -78,6 +80,7 @@
 		7EEBCEDE21A4B10F00659C9B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEBCEDD21A4B10F00659C9B /* String+extension.swift */; };
 		7EEBCF7A21A5A7D500659C9B /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEBCF7921A5A7D500659C9B /* ProductService.swift */; };
 		7EEBCF7E21A5AE7200659C9B /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEBCF7D21A5AE7200659C9B /* ProductCollectionViewCell.swift */; };
+		7EECC4C521B7611F00ABE1E9 /* ProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EECC4C421B7611F00ABE1E9 /* ProductInfoTableViewCell.swift */; };
 		7EF027A821A31D4800E8ED2B /* StoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EF027A421A31D4800E8ED2B /* StoreDataModel.xcdatamodeld */; };
 		7EF027AD21A31D8900E8ED2B /* clothesProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EF027AB21A31D8900E8ED2B /* clothesProducts.json */; };
 		7EF027AE21A31D8900E8ED2B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF027AC21A31D8900E8ED2B /* CoreDataStack.swift */; };
@@ -92,6 +95,8 @@
 
 /* Begin PBXFileReference section */
 		7E08F0AF21AB964D00A1F213 /* UserRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRating.swift; sourceTree = "<group>"; };
+		7E22746721B8F2FB004A9EFE /* QuantityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityTableViewController.swift; sourceTree = "<group>"; };
+		7EE84DDD21B5066600D80208 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		7EEAAE8621A1CCDA002118A1 /* FolledoEcommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FolledoEcommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EEAAE8921A1CCDA002118A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EEAAE8E21A1CCDA002118A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,6 +169,7 @@
 		7EEBCEDD21A4B10F00659C9B /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		7EEBCF7921A5A7D500659C9B /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		7EEBCF7D21A5AE7200659C9B /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		7EECC4C421B7611F00ABE1E9 /* ProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoTableViewCell.swift; sourceTree = "<group>"; };
 		7EF027A521A31D4800E8ED2B /* StoreModelData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreModelData.xcdatamodel; sourceTree = "<group>"; };
 		7EF027AB21A31D8900E8ED2B /* clothesProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clothesProducts.json; sourceTree = "<group>"; };
 		7EF027AC21A31D8900E8ED2B /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -440,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				7EEBCEDD21A4B10F00659C9B /* String+extension.swift */,
+				7EE84DDD21B5066600D80208 /* UIImage+extension.swift */,
 				7EF2E4AA21AA095B007D154D /* Double+extension.swift */,
 				7EF2E4AC21AA1341007D154D /* UIColor+extension.swift */,
 			);
@@ -495,6 +502,7 @@
 			children = (
 				7EF2E4A621AA01E3007D154D /* ProductsTableViewController.swift */,
 				7EF75B7F21ABEF6900DB8D9B /* ProductDetailViewController.swift */,
+				7E22746721B8F2FB004A9EFE /* QuantityTableViewController.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -504,6 +512,7 @@
 			children = (
 				7EF2E4A821AA01FC007D154D /* ProductsTableViewCell.swift */,
 				7EF75B8121ABEFD100DB8D9B /* DetailSummaryView.swift */,
+				7EECC4C421B7611F00ABE1E9 /* ProductInfoTableViewCell.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -651,6 +660,7 @@
 				7EF2E4AB21AA095B007D154D /* Double+extension.swift in Sources */,
 				7EF027AE21A31D8900E8ED2B /* CoreDataStack.swift in Sources */,
 				7EF75B8221ABEFD100DB8D9B /* DetailSummaryView.swift in Sources */,
+				7EE84DDE21B5066600D80208 /* UIImage+extension.swift in Sources */,
 				7EF75B7E21ABA9F200DB8D9B /* MyButton.swift in Sources */,
 				7EEBCF7A21A5A7D500659C9B /* ProductService.swift in Sources */,
 				7EF2E4AD21AA1341007D154D /* UIColor+extension.swift in Sources */,
@@ -661,6 +671,8 @@
 				7EEBCEDE21A4B10F00659C9B /* String+extension.swift in Sources */,
 				7EEBCF7E21A5AE7200659C9B /* ProductCollectionViewCell.swift in Sources */,
 				7EF2E4A921AA01FC007D154D /* ProductsTableViewCell.swift in Sources */,
+				7E22746821B8F2FB004A9EFE /* QuantityTableViewController.swift in Sources */,
+				7EECC4C521B7611F00ABE1E9 /* ProductInfoTableViewCell.swift in Sources */,
 				7EEAAE9F21A205A4002118A1 /* HomeViewController.swift in Sources */,
 				7EF75B8021ABEF6900DB8D9B /* ProductDetailViewController.swift in Sources */,
 				7EF2E4A721AA01E3007D154D /* ProductsTableViewController.swift in Sources */,
@@ -813,6 +825,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KSKUH7X29;
 				INFOPLIST_FILE = FolledoEcommerceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -831,6 +844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KSKUH7X29;
 				INFOPLIST_FILE = FolledoEcommerceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

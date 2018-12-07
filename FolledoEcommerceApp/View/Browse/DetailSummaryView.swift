@@ -26,6 +26,8 @@ class DetailSummaryView: UIView {
    @IBOutlet weak var userRating: UserRating! //PB ep68 7mins
    
    
+   var buttonContainerView: UIView? //PB ep70 2mins containerView for our buttons
+   
    
    override init(frame: CGRect) { //PB ep68 8mins because we subclass the UIView, we need to override the initialization of the UIView
       super.init(frame: frame) //PB ep68 9mins
@@ -41,6 +43,10 @@ class DetailSummaryView: UIView {
    
    internal func updateView(with product: Product) { //PB ep68 10mins
 //      print("Product name: \(String(describing: product.name))") //PB ep68 10mins
+      
+   //make sure no previous still exists in the currentView
+      buttonContainerView?.removeFromSuperview() //PB ep70 23mins this guarantees that the buttonContainerView will be reset
+      
    //Set default state //PB ep69 0mins
       qtyLeftLabel.isHidden = true //PB ep69 1mins
       quantityButton.setTitle("Quantity: 1", for: .normal) //PB ep69 1mins
@@ -90,9 +96,51 @@ class DetailSummaryView: UIView {
             productImageView.image = Utility.image(withName: mainImage.name, andType: "png") //PB ep69 19mins pass in our image
          }
          
+         let imageCount = allImages.count //PB ep70 0mins count all the images we have in that product, so we know how many array of buttons to create
+         var arrayButtons = [UIButton]() //PB ep70 1mins array of buttons
+         buttonContainerView = UIView() //PB ep70 2mins initialize the buttonContainerView
+         
+         for x in 0..<imageCount { //PB ep70 2mins loop base on the number of images we have
+            let image = Utility.image(withName: allImages[x].name, andType: "png") //PB ep70 3mins image we will have to our buttons
+            let buttonImage = image?.resizeImage(newHeight: 40.0) //PB ep70 4mins to have the image resize properly we need an extension //PB ep70 8mins finished
+            
+            let button = UIButton() //PB ep70 8mins initialize button
+            button.setTitle(allImages[x].name, for: .normal) //PB ep70 8mins
+            button.imageView?.contentMode = .scaleAspectFit //PB ep70 9mins
+            button.setImage(buttonImage, for: .normal) //PB ep70 9mins
+            button.imageEdgeInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0) //PB ep70 10mins image is centered in the button itself
+            button.contentMode = .center //PB ep70 10mins
+            button.layer.borderWidth = 1 //PB ep70 11mins
+            button.layer.borderColor = UIColor.lightGray.cgColor //PB ep70 11mins
+            button.layer.cornerRadius = 5 //PB ep70 11mins
+            
+            //now we need to put the button's coordinates
+            if x == 0 { //PB ep70 11mins
+               button.frame = CGRect(x: 0, y: 0, width: 50.0, height: 50.0) //PB ep70 12mins all of these buttons will be inserted in the buttonContainerView, that is why 0,0 will be on the top left
+            } else { //PB ep70 13mins
+               button.frame = CGRect(x: arrayButtons[x-1].frame.maxX + 10, y: arrayButtons[x-1].frame.minY, width: 50.0, height: 50.0) //PB ep70 13-16mins to get the x we the arrayButtons[x-1] because we need to get the previous buttons's coordinates, then .frame.maxX to get the furthest X of the previous's button and lastly + 10spaces in between. For y = arrayButtons[x-1].frame.minY, it is the same thing but this time, we get the minimum possible y of the previous button, which allows this method to be reusable even if we go to a new line of buttons
+            }
+            arrayButtons.append(button) //PB ep70 16mins add it to array
+            
+            //PB ep70 16mins now we want to show a larger image once button is tapped, we'll create a method for it
+            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside) //PB ep70 18mins
+            buttonContainerView?.addSubview(button) //PB ep70 18mins we still need to determine the size of containerView
+         }
+         
+         let containerWidth = imageCount * 50 + (imageCount - 1) * 10 //PB ep70 19mins
+         buttonContainerView?.frame = CGRect(x: 20, y: Int(productImageView.frame.maxY), width: containerWidth, height: 50) //PB ep70 20mins will have 20 spaces on the left, and right underneath productImageView
+         self.addSubview(buttonContainerView!) //PB ep70 21mins add it to our DetailSummaryView, remember to reset this view when we switched products
       }
-      
    }
+   
+   @objc func buttonAction (_ sender: UIButton) { //PB ep70 16mins sender is the uibutton itself
+      if let imageName = sender.currentTitle { //PB ep70 16mins now we need to get the imageName from the button being tapped to display the larger image
+         let image = Utility.image(withName: imageName, andType: "png") //PB ep70 16mins get the image from imageName
+         productImageView.image = image //PB ep70 17mins update our productImageView
+         productImageView.contentMode = .scaleAspectFit //PB ep70 17mins
+      }
+   }
+         
    
    
 }
