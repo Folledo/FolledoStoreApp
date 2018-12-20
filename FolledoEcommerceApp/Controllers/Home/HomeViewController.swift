@@ -16,9 +16,9 @@ class HomeViewController: UIViewController { //PB ep.5
    
    @IBOutlet weak var pageControl: UIPageControl! //PB ep7 2mins lets manipulate this in loadNextController
    
-   @IBOutlet weak var topsCollectionView: UICollectionView!
+   @IBOutlet weak var topsCollectionView: UICollectionView! //PB ep7
    
-   @IBOutlet weak var pantsCollectionView: UICollectionView!
+   @IBOutlet weak var pantsCollectionView: UICollectionView! //PB ep7
    
    
    
@@ -28,6 +28,12 @@ class HomeViewController: UIViewController { //PB ep.5
    var currentIndex = 0 //PB ep6 1mins
    var topsCollection = [Product]() //PB ep11 10mins will contain our products we load
    var pantsCollection = [Product]() //PB ep11 10mins
+   
+   var selectedProduct: Product? //PB ep77 5mins
+   var productsInSelectedCategory: [Product]? //PB ep77 5mins array of products
+   var productTVC: ProductsTableViewController? //PB ep77 8mins reference to the ProductsTVC in order to communicate which product we selected and pass it to this property
+   
+   
    
 //MARK: LifeCycle
    override func viewDidLoad() { //PB ep.5
@@ -119,7 +125,7 @@ extension HomeViewController: UIPageViewControllerDataSource { //PB ep5 22mins
    }
 }
 
-//MARK: UICollectionViewDataSource //PB ep11 12mins
+//MARK: UICollectionView DataSource //PB ep11 12mins
 extension HomeViewController: UICollectionViewDataSource { //PB ep11 12mins remember we have 2 different collectionView, we need to differentiate which collectionView we're working on. //our methods required for DataSource
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { //PB ep11 12mins
@@ -161,6 +167,25 @@ extension HomeViewController: UICollectionViewDataSource { //PB ep11 12mins reme
       
    }
    //PB ep11 12mins
+} //end of CV DataSource
+
+
+extension HomeViewController: UICollectionViewDelegate { //PB ep77 3mins
    
-   
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) { //PB ep77 3mins capture which cell selected
+      switch collectionView {
+      case self.topsCollectionView: //PB ep77 4mins
+         selectedProduct = topsCollection[indexPath.row] //PB ep77 6mins assign selectedProduct from topCollection with the indexPath
+         productsInSelectedCategory = topsCollection //PB ep77 6mins capture the topCollection
+      case self.pantsCollectionView: //PB ep77 4mins
+         selectedProduct = pantsCollection[indexPath.row] //PB ep77 6mins
+         productsInSelectedCategory = pantsCollection //PB ep77 7mins
+      default: //PB ep77 4mins
+         print("nothing is selected") //PB ep77 7mins
+      }
+      self.productTVC?.products = productsInSelectedCategory //PB ep77 11mins now assign the productsInSelectedCat to our products, and selectedProduct user tapped on to our TVC's selectedProduct
+      self.productTVC?.selectedProduct = selectedProduct //PB ep77 11mins
+      
+      self.parent?.tabBarController?.selectedIndex = 1 //PB ep77 11mins now we programatically set the focus of our scene to our browse scene, which will display the productDetailSplitVC //PB ep77 12mins since browse is in secondTabBar, selectedIndex is 1
+   }
 }

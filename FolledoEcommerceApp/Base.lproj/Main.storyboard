@@ -233,7 +233,7 @@
             </objects>
             <point key="canvasLocation" x="897.554347826087" y="133.33333333333334"/>
         </scene>
-        <!--Product Detail View Controller-->
+        <!--Product Detail-->
         <scene sceneID="TdO-wf-SQw">
             <objects>
                 <viewController id="Y5G-Hg-qDL" customClass="ProductDetailViewController" customModule="FolledoEcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -409,6 +409,9 @@ Gift-wrap available</string>
                                                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addToCartButtonTapped:" destination="Y5G-Hg-qDL" eventType="touchUpInside" id="Cq2-d0-14x"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -585,9 +588,11 @@ Gift-wrap available</string>
                                                     <constraint firstAttribute="height" constant="500" id="1Be-xd-aY2"/>
                                                     <constraint firstItem="15b-w7-XQ6" firstAttribute="leading" secondItem="8pJ-5y-mP0" secondAttribute="leading" constant="8" id="Dep-aq-MIB"/>
                                                     <constraint firstItem="uQT-u9-3JI" firstAttribute="leading" secondItem="G8z-2l-JHI" secondAttribute="leading" id="JBQ-AZ-IPF"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G8z-2l-JHI" secondAttribute="trailing" constant="20" symbolic="YES" id="UaT-iu-uUk"/>
                                                     <constraint firstAttribute="trailing" secondItem="15b-w7-XQ6" secondAttribute="trailing" constant="8" id="Vfl-jb-OoX"/>
                                                     <constraint firstItem="c7W-I7-Pwr" firstAttribute="trailing" secondItem="UEC-Je-16f" secondAttribute="trailing" id="Xsi-be-z4v"/>
                                                     <constraint firstItem="c7W-I7-Pwr" firstAttribute="leading" secondItem="UEC-Je-16f" secondAttribute="leading" constant="-8" id="YFc-SC-BqD"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uQT-u9-3JI" secondAttribute="trailing" constant="20" symbolic="YES" id="dzp-wH-jBX"/>
                                                     <constraint firstItem="G8z-2l-JHI" firstAttribute="top" secondItem="8pJ-5y-mP0" secondAttribute="top" constant="2" id="hd5-8t-DDt"/>
                                                     <constraint firstItem="c7W-I7-Pwr" firstAttribute="top" secondItem="uQT-u9-3JI" secondAttribute="bottom" id="lXv-Mj-tuT"/>
                                                     <constraint firstItem="15b-w7-XQ6" firstAttribute="top" secondItem="G8z-2l-JHI" secondAttribute="bottom" constant="2" id="pGW-uE-NoL"/>
@@ -629,13 +634,20 @@ Gift-wrap available</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E6e-hu-hF7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1IS-Ph-ZDE"/>
+                    <navigationItem key="navigationItem" title="Product Detail" id="1IS-Ph-ZDE">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="isC-ma-m9M">
+                            <connections>
+                                <segue destination="iAt-GT-ojy" kind="presentation" identifier="toCartSegue" modalPresentationStyle="formSheet" id="1ne-OX-atC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="736" height="800"/>
                     <connections>
                         <outlet property="detailSummaryView" destination="nvy-wP-uYh" id="Toh-av-wj8"/>
                         <outlet property="productDescriptionImageView" destination="yqS-NV-mp6" id="Dmn-kq-Ajh"/>
                         <outlet property="productDescriptionLabel" destination="UEC-Je-16f" id="zRB-dN-czd"/>
                         <outlet property="scrollView" destination="hgb-Pc-Ey3" id="HWP-ra-EVJ"/>
+                        <outlet property="shoppingCartButton" destination="isC-ma-m9M" id="v3R-ex-Y1m"/>
                         <outlet property="tableView" destination="c7W-I7-Pwr" id="FZ0-R3-UjP"/>
                     </connections>
                 </viewController>
@@ -697,7 +709,70 @@ Gift-wrap available</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jl-Af-wH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2213" y="3128"/>
+            <point key="canvasLocation" x="2096" y="3480"/>
+        </scene>
+        <!--Shopping Cart-->
+        <scene sceneID="wWo-u8-NMB">
+            <objects>
+                <tableViewController id="LDz-MM-OZd" customClass="CartTableViewController" customModule="FolledoEcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8pe-ca-K8d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="394"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellItemInCart" rowHeight="70" id="0Jj-j6-QY7">
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Jj-j6-QY7" id="cJX-OM-14i">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="69.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSummary" textLabel="go9-bX-zSd" detailTextLabel="3LL-5D-3UI" style="IBUITableViewCellStyleValue1" id="8J0-85-JDo">
+                                <rect key="frame" x="0.0" y="125.33333333333334" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8J0-85-JDo" id="A9R-yA-cO5">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="go9-bX-zSd">
+                                            <rect key="frame" x="20.000000000000004" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3LL-5D-3UI">
+                                            <rect key="frame" x="350" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LDz-MM-OZd" id="RaZ-dV-tjN"/>
+                            <outlet property="delegate" destination="LDz-MM-OZd" id="80H-iW-KND"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Shopping Cart" id="yDk-ag-rxS">
+                        <barButtonItem key="leftBarButtonItem" title="Continue Shopping" id="27n-DM-p7i">
+                            <connections>
+                                <action selector="continueShoppingTapped:" destination="LDz-MM-OZd" id="UDX-i3-6Ma"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Checkout" id="cte-d9-aFr"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="checkoutButton" destination="cte-d9-aFr" id="kBK-Da-5ON"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHI-9t-RiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3296.739130434783" y="2915.9420289855075"/>
         </scene>
         <!--Products-->
         <scene sceneID="3OG-TX-PEH">
@@ -897,7 +972,7 @@ Gift-wrap available</string>
                         <rect key="frame" x="0.0" y="0.0" width="415.66666665673256" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -908,6 +983,24 @@ Gift-wrap available</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Yc-vc-qok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="891.84782608695662" y="3044.9275362318845"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O5e-zc-by5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iAt-GT-ojy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jDn-pQ-Lng">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LDz-MM-OZd" kind="relationship" relationship="rootViewController" id="893-89-6DS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PoU-De-ZUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2523.913043478261" y="2915.9420289855075"/>
         </scene>
     </scenes>
     <resources>

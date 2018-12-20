@@ -23,14 +23,31 @@ class ProductsTableViewController: UITableViewController { //PB ep63 9mins
    }
    
    override func viewWillAppear(_ animated: Bool) { //PB ep64 5mins we will have the browse method called in this lifecycle because once the VC is loaded by viewDidLoad first, viewDidLoad will not be called again. But viewWillAppear will be called everytime it is about to be shown. This will help us not show the same products over and over
-      super.viewWillAppear(animated)
-      self.products = ProductService.browse() //PB ep64 7mins
-      if let products = self.products { //PB ep64 8mins unwrap the products and take at least one
-         selectedProduct = products.first //PB ep64 9mins grab the first item from the products list
+      super.viewWillAppear(animated) //PB ep77 5mins
+      
+      self.navigationItem.title = "Products" //PB ep77 21mins this will be default title unless we have selected a product from HomeVC
+      
+      if let products = self.products, products.count > 0  { //PB ep77 13mins check if products isnt nil
+//         let title = products.count > 0 ? (products.first?.type?.uppercased())! : "Products" //PB ep77 14mins this assign either the product's type as the title, else it will just be Products //PB ep77 21mins changed instead so it will go back to Products if we didnt select anything from the HomeVC
+         self.navigationItem.title = (products.first?.type?.uppercased())! //PB ep77 15mins
+      } else { //PB ep77 13mins
+         self.products = ProductService.browse() //PB ep64 7mins  //PB ep77 12mins gets all product we have in our CoreData,  but now since products and selectedProducts can receive the info from HomeVC, we need to make slight adjustment in this method with an if-let
+         if let products = self.products { //PB ep64 8mins unwrap the products and take at least one
+            selectedProduct = products.first //PB ep64 9mins grab the first item from the products list
+         }
       }
       tableView.reloadData() //PB ep64 9mins refresh to list be sure
+      tableView.tableFooterView = UIView() //PB ep77 21mins to remove the additional line separator underneath our products
    }
    
+   override func viewDidDisappear(_ animated: Bool) { //PB ep77 17mins
+      super.viewDidDisappear(animated) //PB ep77 17mins
+       //PB ep77 17mins whenever the view disappears, we want to set the products and selectedProducts to nil
+      self.products?.removeAll() //PB ep77 18mins
+      self.selectedProduct = nil //PB ep77 18mins
+      self.delegate?.product = nil //PB ep77 19mins to be sure that nothing weird will happen, we also want to set the product's delegate to nil as well. This will not show if productDetail is on a certain product
+//      self.navigationItem.title = "Products" //PB ep77 20mins did it in viewWillAppear instead
+   }
    
 
 // MARK: - Table view data source

@@ -36,6 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       productsTableVC.delegate = productDetailVC //PB ep68 20mins now that have the reference to both master and detail, now we can set the delegate on the MasterTableViewCOntroller equal to productDetailVC //now we can be sure that the delegate in the producttableVC is not going to be nil but will come from ProductDetailViewController
       
       
+      let homeNav = tabBarController.viewControllers?[0] as! UINavigationController //PB ep77 10mins
+      let homeVC = homeNav.topViewController as! HomeViewController //PB ep77 10mins
+      homeVC.productTVC = productsTableVC //PB ep77 11mins passing in the ProductTVC to the productTVC under homeViewController
+      
       return true
    }
 
