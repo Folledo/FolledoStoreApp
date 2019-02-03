@@ -18,6 +18,10 @@ import Foundation
 class ShoppingCart { //PB ep75 0mins created as a singleton, meaning only one instant can exist at any given time. So we are not reinitializing this cart as well as keep track
    
    var items = [(product: Product, quantity: Int)]() //PB ep75 3mins items will be an array of tupples as they can be more than 1 item that must have a product and a quantity
+   var customer: Customer? //PB ep90 4mins added for assigning the cart to the right customer
+   var creditCard: CreditCard? //PB ep90 4mins
+   var shippingAddress: Address? //PB ep90 4mins
+   
    
    static let sharedInstance = ShoppingCart() //PB ep75 1mins thiw will initialize this shopping cart
    private init() {} //PB ep75 2mins this prevents reinitialization. This prevents us to invoke the ShoppingCart.init(), the access of this class is only through sharedInstance
@@ -67,6 +71,16 @@ class ShoppingCart { //PB ep75 0mins created as a singleton, meaning only one in
          totalCost += Double(item.quantity) * item.product.salePrice //PB ep75 17mins multiply each item's salePrice by its quantity. salePrice is from our DataModel
       }
       return totalCost //PB ep75 17mins
+   }
+   
+   
+   internal func assignCart(toCustomer: Customer) { //PB ep90 3mins assigning cart to customer
+      self.customer = toCustomer //PB ep90 4mins
+//      self.items = items //PB ep90 5mins
+   }
+   
+   internal func assignShipping(address: Address) { //PB ep90 5mins
+      self.shippingAddress = address //PB ep90 5mins
    }
    
    

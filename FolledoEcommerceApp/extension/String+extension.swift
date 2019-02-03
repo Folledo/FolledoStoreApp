@@ -17,4 +17,10 @@ extension String { //PB ep9 23mins
       }
       return self //PB ep9 else if no dot then return self
    }
+   
+   func maskedPlusLast4() -> String { //PB ep91 7mins method to only show the last 4 digits of the credit card
+      let last4CardNumber = self.suffix(4) //PB ep91 8mins
+      return "****\(last4CardNumber)" //PB ep91 9mins
+   }
+   
 }

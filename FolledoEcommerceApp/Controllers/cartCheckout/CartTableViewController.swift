@@ -16,10 +16,7 @@ class CartTableViewController: UITableViewController { //PB ep78 6mins
    
 //MARK: Properties
    var shoppingCart = ShoppingCart.sharedInstance //PB ep78 9mins get the singleton sharedInstance
-   
    weak var cartDelegate: ShoppingCartDelegate? //PB ep81 8mins
-   
-   
    
    
    override func viewDidLoad() { //PB ep78 6mins

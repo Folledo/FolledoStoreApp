@@ -156,7 +156,7 @@ extension ProductDetailViewController: UITableViewDataSource { //PB ep72 11mins
       return 1 //PB ep72 12mins
    }
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { //PB ep72 12mins
-      return self.specifications.count //PB ep72 12mins
+      return self.specifications.count //PB ep82 12mins
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //PB ep72 13mins

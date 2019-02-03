@@ -20,4 +20,17 @@ class Utility { //PB ep9 20mins
       }
       return image //PB ep9 26mins
    }
+   
+   
+   class func currentYear() -> Int { //PB ep92 32mins will get the current year
+      let calendar = Calendar.current //PB ep91 33mins
+      let currentYear: Int = calendar.component(Calendar.Component.year, from: Date()) //PB ep91 33mins get the current year from today's date
+      return currentYear
+   }
+   
+   class func currentMonth() -> Int { //PB ep91
+      let calendar = Calendar.current
+      let currentMonth: Int = calendar.component(Calendar.Component.month, from: Date())
+      return currentMonth
+   }
 }
