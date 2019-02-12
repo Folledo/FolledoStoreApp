@@ -64,17 +64,22 @@ struct CustomerService { //PB ep84 1mins
       address.zip = zip
       
       let addresses = customer.address?.mutableCopy() as! NSMutableSet //PB ep90 9mins Customer has a one to many relationship with Address. It is an NSSet so we need to convert it so we can update it
-      addresses.add(address) //PB ep90 10mins now we can add the new address to our addresses
       
-      customer.address = addresses.copy() as? NSSet //PB ep90 10mins now put this addresses back to the Customer entity
-      customer.phone = phone //PB ep90 11mins also add the phone
-      
-      do { //PB ep90 11mins now we save the state of Customer and Address entity to the CoreData
-         try managedObjectContext.save() //PB ep90  save them
-         return address //PB ep90 25mins
+      if addresses.contains(address) { //check if we already have that address, then just return
+         return address
+      } else {
+         addresses.add(address) //PB ep90 10mins now we can add the new address to our addresses
          
-      } catch let error as NSError { //PB ep90 11mins
-         fatalError("Error adding customer address: \(error.localizedDescription)") //PB ep90 12mins
+         customer.address = addresses.copy() as? NSSet //PB ep90 10mins now put this addresses back to the Customer entity
+         customer.phone = phone //PB ep90 11mins also add the phone
+         
+         do { //PB ep90 11mins now we save the state of Customer and Address entity to the CoreData
+            try managedObjectContext.save() //PB ep90  save them
+            return address //PB ep90 25mins
+            
+         } catch let error as NSError { //PB ep90 11mins
+            fatalError("Error adding customer address: \(error.localizedDescription)") //PB ep90 12mins
+         }
       }
    }
    

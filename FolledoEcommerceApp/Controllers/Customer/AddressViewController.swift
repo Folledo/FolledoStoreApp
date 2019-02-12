@@ -74,14 +74,14 @@ class AddressViewController: UIViewController { //PB ep84 17mins
                shoppingCart.assignCart(toCustomer: customer) //PB ep90 14min
                
                var address: Address //PB ep90 14mins var for Address
-               if !(address1TextField.text?.isEmpty)! { //PB ep90 15mins unwrap the textField
+               if !(address1TextField.text?.isEmpty)! { //PB ep90 15mins if not empty... unwrap the textField
                   guard let address1 = address1TextField.text, let city = cityTextField.text, let state = stateTextField.text, let zip = zipTextField.text, let phone = phoneTextField.text else { return }
-                  var address2 = " "
+                  var address2 = ""
                   if address2TextField.text == "" || (address2TextField.text?.isEmpty)! {
                      address2 = ""
                   }
                   
-                  address = CustomerService.addAddress(forCustomer: customer, address1: address1, address2: address2, city: city, state: state, zip: zip, phone: phone) //PB ep90 16mins call our addAddress method
+                  address = CustomerService.addAddress(forCustomer: customer, address1: address1.trimmedString(), address2: address2.trimmedString(), city: city.trimmedString(), state: state.trimmedString(), zip: zip.trimmedString(), phone: phone.trimmedString()) //PB ep90 16mins call our addAddress method
                   
                   shoppingCart.assignShipping(address: address) //PB ep90 17mins pass the address
                   
@@ -146,14 +146,36 @@ extension AddressViewController: UIPickerViewDataSource, UIPickerViewDelegate { 
       return addresses.count //PB ep87 5mins
    }
    
-   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? { //PB ep87 5mins this will determine what we see in the pickerView
-      let address = addresses[row] //PB ep87 6mins get each address from addresses
-      
-      return "\(address.address1!) \(address.address2!), \(address.city!), \(address.state!) \(address.zip!)" //PB ep87 7mins
-   }
+   //removed for viewForRow instead
+//   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? { //PB ep87 5mins this will determine what we see in the pickerView
+//      let address = addresses[row] //PB ep87 6mins get each address from addresses
+//
+//      return "\(address.address1!) \(address.address2!), \(address.city!), \(address.state!) \(address.zip!)" //PB ep87 7mins
+//   }
    
    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) { //PB ep87 7mins
       selectedAddress = addresses[row] //PB ep87 8mins
+   }
+   
+   
+   func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView { //this is to change the pickerView's font size from https://stackoverflow.com/questions/44223862/how-do-i-change-the-font-size-in-a-uipickerview-in-swift-3
+      var pickerLabel: UILabel? = (view as? UILabel)
+      if pickerLabel == nil {
+         pickerLabel = UILabel()
+         pickerLabel?.font = UIFont.systemFont(ofSize: 13) //to use the system font with size 13
+         pickerLabel?.textAlignment = .center
+      }
+      
+      let address = addresses[row] //PB ep87 6mins get each address from addresses
+      
+      var hasAddress2: String = ","
+      if address.address2 != "" {
+         hasAddress2 = ", \(address.address2!),"
+      }
+      
+      pickerLabel?.text = "\(address.address1!)\(hasAddress2) \(address.city!), \(address.state!) \(address.zip!)" //PB ep87 7mins
+      
+      return pickerLabel!
    }
 }
 

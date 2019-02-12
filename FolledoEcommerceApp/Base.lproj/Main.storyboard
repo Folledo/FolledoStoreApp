@@ -1111,7 +1111,7 @@ Gift-wrap available</string>
                                     <constraint firstAttribute="height" constant="40" id="wKL-ci-M4C"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jsI-Nv-cYe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jsI-Nv-cYe">
                                 <rect key="frame" x="10" y="106" width="394" height="213"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1122,13 +1122,13 @@ Gift-wrap available</string>
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="29.666666666666668"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your credit card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQU-7H-m01">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Your credit card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQU-7H-m01">
                                                     <rect key="frame" x="8" y="7" width="104" height="16"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name on card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1j-zo-pag">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Name on card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1j-zo-pag">
                                                     <rect key="frame" x="173" y="7" width="85" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
@@ -1184,8 +1184,8 @@ Gift-wrap available</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No credit card in record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-vc-3B9">
-                                                    <rect key="frame" x="103" y="0.0" width="144" height="29.666666666666668"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No credit card in record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-vc-3B9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="29.666666666666668"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1204,6 +1204,7 @@ Gift-wrap available</string>
                                                 <constraint firstItem="uKq-fB-hH8" firstAttribute="leading" secondItem="kfI-Sy-nWx" secondAttribute="leading" constant="10" id="oGT-Og-ptC"/>
                                                 <constraint firstItem="PhP-hX-Y3x" firstAttribute="centerY" secondItem="uKq-fB-hH8" secondAttribute="centerY" id="oVY-sx-eJY"/>
                                                 <constraint firstItem="cOn-XP-cRA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PhP-hX-Y3x" secondAttribute="trailing" constant="8" symbolic="YES" id="pZp-Ff-iae"/>
+                                                <constraint firstItem="p4a-vc-3B9" firstAttribute="width" secondItem="kfI-Sy-nWx" secondAttribute="width" id="u8D-Df-2I5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1214,7 +1215,7 @@ Gift-wrap available</string>
                                             <outlet property="noCreditCardLabel" destination="p4a-vc-3B9" id="3ao-o4-2wp"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addCardCell" rowHeight="50" id="8wb-xb-cfA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addCardTitleCell" rowHeight="50" id="8wb-xb-cfA">
                                         <rect key="frame" x="0.0" y="88" width="394" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8wb-xb-cfA" id="swI-kd-oUI">
@@ -1222,7 +1223,7 @@ Gift-wrap available</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZa-1X-v53">
-                                                    <rect key="frame" x="10" y="23" width="374" height="16"/>
+                                                    <rect key="frame" x="10" y="23" width="88" height="16"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1232,27 +1233,26 @@ Gift-wrap available</string>
                                                 <constraint firstAttribute="bottomMargin" secondItem="KZa-1X-v53" secondAttribute="bottom" id="NAg-I9-EpB"/>
                                                 <constraint firstItem="KZa-1X-v53" firstAttribute="leading" secondItem="swI-kd-oUI" secondAttribute="leadingMargin" constant="-10" id="myw-uW-7Jd"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KZa-1X-v53" secondAttribute="trailing" constant="10" id="wct-5b-jsL"/>
-                                                <constraint firstItem="KZa-1X-v53" firstAttribute="width" secondItem="swI-kd-oUI" secondAttribute="width" constant="-20" id="xjo-YB-jMY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardInfoCell" rowHeight="200" id="pfO-H1-LTb" customClass="NewCreditCardTableViewCell" customModule="FolledoEcommerceApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addCardCell" rowHeight="200" id="pfO-H1-LTb" customClass="NewCreditCardTableViewCell" customModule="FolledoEcommerceApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="138" width="394" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfO-H1-LTb" id="8BT-p4-0lz">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="199.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Wvc-tZ-Wby">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="12" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Wvc-tZ-Wby">
                                                     <rect key="frame" x="20" y="11" width="262.66666666666669" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6ez-Dm-IZ6"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qI2-g6-Yk8">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="12" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qI2-g6-Yk8">
                                                     <rect key="frame" x="20" y="49" width="262.66666666666669" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1285,6 +1285,9 @@ Gift-wrap available</string>
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="expMonthButtonTapped:" destination="4ch-0Y-erg" eventType="touchUpInside" id="efb-hg-gdA"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQ2-m6-gBF" customClass="MyButton" customModule="FolledoEcommerceApp" customModuleProvider="target">
                                                     <rect key="frame" x="72" y="118" width="60" height="30"/>
@@ -1303,6 +1306,9 @@ Gift-wrap available</string>
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="expYearButtonTapped:" destination="4ch-0Y-erg" eventType="touchUpInside" id="2I4-X2-hlD"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-nm-TyN" customClass="MyButton" customModule="FolledoEcommerceApp" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="171" width="120" height="28"/>
@@ -1405,6 +1411,7 @@ Gift-wrap available</string>
                     </view>
                     <connections>
                         <outlet property="mainView" destination="Sye-7V-9Ac" id="3rm-A1-9AK"/>
+                        <outlet property="paymentTableView" destination="jsI-Nv-cYe" id="1SZ-37-adp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGq-Zy-JoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1842,7 +1849,7 @@ Gift-wrap available</string>
         <!--Navigation Controller-->
         <scene sceneID="1V8-jr-R9p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gb5-fR-dHO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navPopover" automaticallyAdjustsScrollViewInsets="NO" id="gb5-fR-dHO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <size key="freeformSize" width="200" height="540"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y3g-tq-Nck">

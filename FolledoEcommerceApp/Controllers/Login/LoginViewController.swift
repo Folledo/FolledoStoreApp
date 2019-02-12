@@ -50,11 +50,11 @@ class LoginViewController: UIViewController { //PB ep82
    @IBAction func signinButtonTapped(_ sender: MyButton) { //PB ep82
       guard let email = emailTextField.text, let password = passwordTextField.text else { return } //PB ep84 8mins check if fields have values
       
-      customer = CustomerService.verify(username: email, password: password) //PB ep84 9mins now we verify. Customer object can be a real customer entity, if it cannot be found then return nil
+      customer = CustomerService.verify(username: email.trimmedString(), password: password.trimmedString()) //PB ep84 9mins now we verify. Customer object can be a real customer entity, if it cannot be found then return nil
       
       if customer != nil { //PB ep84 10mins if we have a customer...
          
-         performSegue(withIdentifier: "shipAddressSegue", sender: self) //PB ep84 15mins if we have a customer then go to shipping address
+         performSegue(withIdentifier: "shipAddressSegue", sender: self) //PB ep84 15mins if we have a customer then go to shipping address 
          
          
       } else { //PB ep84 10mins if customer is nil

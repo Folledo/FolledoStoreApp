@@ -82,7 +82,7 @@ class ProductDetailViewController: UIViewController, UIScrollViewDelegate { //PB
       //description
          var description = ""//PB ep72 7mins capture description
          for currentInfo in productInfo { //PB ep72 8mins
-            if let info = currentInfo.info, info.characters.count > 0, currentInfo.type == "description" { //PB ep72 8-9mins currentInfo,info comes from CoreDatamodel //Once we got info we want to make a quick check
+            if let info = currentInfo.info, info.count > 0, currentInfo.type == "description" { //PB ep72 8-9mins currentInfo,info comes from CoreDatamodel //Once we got info we want to make a quick check
                 //PB ep72 9mins if condition is fulfilled, then we'll set description = description + info
                description = description + info + "\n\n" //PB ep72 9mins
             }

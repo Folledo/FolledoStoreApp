@@ -23,4 +23,10 @@ extension String { //PB ep9 23mins
       return "****\(last4CardNumber)" //PB ep91 9mins
    }
    
+   func trimmedString() -> String { //method that removes string's left and right white spaces and new lines
+      let newWord: String = self.trimmingCharacters(in: .whitespacesAndNewlines)
+      print(newWord)
+      return newWord
+   }
+   
 }

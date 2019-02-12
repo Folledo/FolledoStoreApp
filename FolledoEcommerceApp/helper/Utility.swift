@@ -33,4 +33,10 @@ class Utility { //PB ep9 20mins
       let currentMonth: Int = calendar.component(Calendar.Component.month, from: Date())
       return currentMonth
    }
+   
+//   class func trimmedString((word: String)) -> String { //method that removes string's left and right white spaces and new lines
+//      let newWord: String = word.trimmingCharacters(in: .whitespacesAndNewlines)
+//      print(newWord)
+//      return newWord
+//   }
 }
