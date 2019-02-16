@@ -74,7 +74,7 @@ class AddressViewController: UIViewController { //PB ep84 17mins
                shoppingCart.assignCart(toCustomer: customer) //PB ep90 14min
                
                var address: Address //PB ep90 14mins var for Address
-               if !(address1TextField.text?.isEmpty)! { //PB ep90 15mins if not empty... unwrap the textField
+               if !(address1TextField.text?.isEmpty)! && !(cityTextField.text?.isEmpty)! && !(stateTextField.text?.isEmpty)! && !(zipTextField.text?.isEmpty)! { //PB ep90 15mins if not empty... unwrap the textField
                   guard let address1 = address1TextField.text, let city = cityTextField.text, let state = stateTextField.text, let zip = zipTextField.text, let phone = phoneTextField.text else { return }
                   var address2 = ""
                   if address2TextField.text == "" || (address2TextField.text?.isEmpty)! {
@@ -123,7 +123,7 @@ class AddressViewController: UIViewController { //PB ep84 17mins
       let keyboardSize = value.cgRectValue.size //PB ep88 7mins with value, now we can get the keyboard size
       print(keyboardSize.height)
    //PB ep88 7mins now we need the content inset based on these keyboard size
-      let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0) //PB ep88 8mins create the inset and put keyboardSize at the bottom
+      let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 90, right: 0.0) //PB ep88 8mins create the inset and put keyboardSize at the bottom
       scrollView.contentInset = contentInsets //PB ep88 8mins
       scrollView.scrollIndicatorInsets = contentInsets //PB ep88 8mins
    }

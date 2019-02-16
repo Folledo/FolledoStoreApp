@@ -13,7 +13,7 @@ enum CreditCardType: String { //PB ep91 14mins enum which will identify the card
    case MC = "mastercard" //PB ep91 15mins
    case Amex = "amex" //PB ep91 15mins
    case Discover = "discover" //PB ep91 15mins
-   case Unknown = "uknown" //PB ep91 15mins
+   case Unknown = "unknown" //PB ep91 15mins
 }
 
 protocol CreditCardDelegate: class { //PB ep91 28mins, when we're updating the paymentVC, this delegate will be implemented by paymentVC

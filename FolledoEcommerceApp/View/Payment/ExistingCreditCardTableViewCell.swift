@@ -34,7 +34,9 @@ class ExistingCreditCardTableViewCell: UITableViewCell { //PB ep91 1mins
    internal func configureCell(withCreditCard creditCard: CreditCard) { //PB ep91 5mins
       noCreditCardLabel.isHidden = true //PB ep91 6mins
       cardNumberLabel.text = creditCard.cardNumber?.maskedPlusLast4() //PB ep91 6mins, but we need to mask this to only show the last 4 digits. We created that method in String extensions
-      cardTypeImageView.image = UIImage(named: creditCard.type!) //PB ep91 10mins
+      cardTypeImageView.image = UIImage(named: "\(creditCard.type!)") //PB ep91 10mins
+      print(creditCard.type!)
+      
       nameOnCardLabel.text = creditCard.nameOnCard //PB ep91 10mins
       expirationLabel.text = "\(creditCard.expMonth)/\(creditCard.expYear)" //PB ep91 11mins
       

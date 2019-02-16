@@ -116,7 +116,7 @@ extension PaymentViewController: UITableViewDataSource, UITableViewDelegate { //
          let cell = tableView.dequeueReusableCell(withIdentifier: "addCardTitleCell", for: indexPath) //PB ep93 32mins
          return cell //PB ep93 32mins
       case 3:
-         tableView.rowHeight = 100 //PB ep93 43mins
+         tableView.rowHeight = 200 //PB ep93 43mins
          let cell = tableView.dequeueReusableCell(withIdentifier: "addCardCell", for: indexPath) as! NewCreditCardTableViewCell //PB ep93 32mins
          cell.customer = customer //PB ep93 33mins because we opened this NewCreditCardTVC we need to pass in this customer object because we need to use this customer object to pass in when we add the credit card in this customer,meaning this is to associate the new card with the customer
          cell.creditCardDelegate = self //PB ep93 4mins dont forget to implement in the extension
@@ -134,10 +134,10 @@ extension PaymentViewController: UITableViewDataSource, UITableViewDelegate { //
             shoppingCart.creditCard = self.creditCards[indexPath.row] //PB ep93 39mins then attach the credit card selected to our shopping cart
             
             if selectedIndexPath != nil && selectedIndexPath != indexPath { //PB ep93 39mins check if there is a credit card that already selected previously and we want to change to a different card
-               paymentTableView.cellForRow(at: selectedIndexPath!)?.accessoryType = .none //PB ep93 40mins remove the checkmark like this //PB ep93 40mins because if the selectedIndexPath does not match with indexPath, that means that it is not the card selected and we want to remove the checkmark
+               tableView.cellForRow(at: selectedIndexPath!)?.accessoryType = .none //PB ep93 40mins remove the checkmark like this //PB ep93 40mins because if the selectedIndexPath does not match with indexPath, that means that it is not the card selected and we want to remove the checkmark
                selectedIndexPath = indexPath //PB ep93 40mins set the new selectedIndexPath
             }
-            paymentTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark //PB ep93 41mins
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark //PB ep93 41mins
          }
          
       default: //PB ep93 38mins
