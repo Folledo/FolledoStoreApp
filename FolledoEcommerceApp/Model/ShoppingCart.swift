@@ -82,6 +82,14 @@ class ShoppingCart { //PB ep75 0mins created as a singleton, meaning only one in
    internal func assignShipping(address: Address) { //PB ep90 5mins
       self.shippingAddress = address //PB ep90 5mins
    }
+	
+	
+	internal func reset() { //PB ep96 11mins reset function after confirming order
+		self.items.removeAll() //PB ep96 12mins
+		self.customer = nil //PB ep96 12mins
+		self.creditCard = nil //PB ep96 12mins
+		self.shippingAddress = nil //PB ep96 12mins
+	}
    
    
 //find

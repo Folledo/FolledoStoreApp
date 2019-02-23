@@ -85,9 +85,11 @@ class HomeViewController: UIViewController { //PB ep.5
    func loadProducts() { //PB ep11 1mins
       topsCollection = ProductService.productsCategory(category: "top") //PB ep11 11mins since w ecreate it as static, we dont need an instance for ProductService //category will be "top"
       pantsCollection = ProductService.productsCategory(category: "pants") //PB ep11 11mins
-      
-      
    }
+	
+	@IBAction func unnwindFromOrderConfirmation(segue: UIStoryboardSegue) { //PB ep96 14mins action for unwind segue for OrderConfirmationVC to get back to home
+		print("Coming from Order Confirmation")
+	}
    
 }
 

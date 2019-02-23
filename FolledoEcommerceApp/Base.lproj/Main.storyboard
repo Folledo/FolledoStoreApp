@@ -1136,13 +1136,13 @@ Gift-wrap available</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Name on card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1j-zo-pag">
-                                                                    <rect key="frame" x="173" y="7" width="85" height="16"/>
+                                                                    <rect key="frame" x="193" y="7" width="85" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sba-1e-quY">
-                                                                    <rect key="frame" x="291" y="7" width="63" height="16"/>
+                                                                    <rect key="frame" x="311" y="7" width="63" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1180,19 +1180,19 @@ Gift-wrap available</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameOnCard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOn-XP-cRA">
-                                                                    <rect key="frame" x="189" y="7" width="80" height="16"/>
+                                                                    <rect key="frame" x="209" y="7" width="80" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-8x-eIC">
-                                                                    <rect key="frame" x="309" y="7" width="33" height="16"/>
+                                                                    <rect key="frame" x="329" y="7" width="33" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No credit card in record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-vc-3B9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="29.666666666666668"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="370" height="29.666666666666668"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1251,22 +1251,22 @@ Gift-wrap available</string>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="12" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Wvc-tZ-Wby">
-                                                                    <rect key="frame" x="20" y="11" width="262.66666666666669" height="30"/>
+                                                                    <rect key="frame" x="20" y="11" width="276" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="6ez-Dm-IZ6"/>
                                                                     </constraints>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="12" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qI2-g6-Yk8">
-                                                                    <rect key="frame" x="20" y="49" width="262.66666666666669" height="30"/>
+                                                                    <rect key="frame" x="20" y="49" width="276" height="30"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 </textField>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6H-Ix-kOo">
-                                                                    <rect key="frame" x="20" y="94" width="344" height="16"/>
+                                                                    <rect key="frame" x="20" y="94" width="364" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1452,10 +1452,10 @@ Gift-wrap available</string>
             </objects>
             <point key="canvasLocation" x="6756.521739130435" y="3044.9275362318845"/>
         </scene>
-        <!--Review Order Table View Controller-->
+        <!--Review Order-->
         <scene sceneID="rZ7-pq-Rih">
             <objects>
-                <tableViewController id="2LQ-Oe-sFR" customClass="ReviewOrderTableViewController" customModule="FolledoEcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Review Order" id="2LQ-Oe-sFR" customClass="ReviewOrderTableViewController" customModule="FolledoEcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hqO-aa-uTV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="394"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1488,6 +1488,9 @@ Gift-wrap available</string>
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="iJH-AC-aBj" kind="show" id="Hws-4P-41h"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -1703,6 +1706,85 @@ Gift-wrap available</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipT-5z-n5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7513" y="2950"/>
+        </scene>
+        <!--Order Confirmation-->
+        <scene sceneID="aFQ-7u-CBT">
+            <objects>
+                <viewController title="Order Confirmation" id="iJH-AC-aBj" customClass="OrderConfirmationViewController" customModule="FolledoEcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WJn-Rb-pIe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="394"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your order" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKh-tn-iiG">
+                                <rect key="frame" x="10" y="63.999999999999993" width="394" height="28.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ6-jZ-ySx">
+                                <rect key="frame" x="100.66666666666669" y="142.66666666666666" width="213" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order #:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7K-oJ-9gY">
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="orderConfirmationNumber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmB-ki-h9M">
+                                        <rect key="frame" x="0.0" y="29.333333333333343" width="213" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uw-D1-qFA" customClass="MyButton" customModule="FolledoEcommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="69" y="223.66666666666666" width="276" height="34.999999999999972"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="mKc-mX-HRe"/>
+                                </constraints>
+                                <state key="normal" title="Continue Shopping">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continueShoppingButtonTapped:" destination="iJH-AC-aBj" eventType="touchUpInside" id="2jj-jU-7a7"/>
+                                    <segue destination="FL0-w7-2C9" kind="unwind" unwindAction="unnwindFromOrderConfirmationWithSegue:" id="S7O-aW-zuf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZQ6-jZ-ySx" firstAttribute="top" secondItem="RKh-tn-iiG" secondAttribute="bottom" constant="50" id="0qN-ND-pLF"/>
+                            <constraint firstItem="8uw-D1-qFA" firstAttribute="width" secondItem="WJn-Rb-pIe" secondAttribute="width" multiplier="2:3" id="Bbs-i6-a3R"/>
+                            <constraint firstItem="RKh-tn-iiG" firstAttribute="leading" secondItem="GgT-w4-dPS" secondAttribute="leading" constant="10" id="IPH-P2-I3g"/>
+                            <constraint firstItem="RKh-tn-iiG" firstAttribute="top" secondItem="GgT-w4-dPS" secondAttribute="top" constant="20" id="Ric-cJ-RsR"/>
+                            <constraint firstItem="8uw-D1-qFA" firstAttribute="centerX" secondItem="WJn-Rb-pIe" secondAttribute="centerX" id="dfN-Vu-Aei"/>
+                            <constraint firstItem="8uw-D1-qFA" firstAttribute="top" secondItem="ZQ6-jZ-ySx" secondAttribute="bottom" constant="30" id="gDE-5t-wqB"/>
+                            <constraint firstItem="ZQ6-jZ-ySx" firstAttribute="centerX" secondItem="WJn-Rb-pIe" secondAttribute="centerX" id="owt-fS-J1T"/>
+                            <constraint firstItem="GgT-w4-dPS" firstAttribute="trailing" secondItem="RKh-tn-iiG" secondAttribute="trailing" constant="10" id="ypV-9a-EiL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GgT-w4-dPS"/>
+                    </view>
+                    <connections>
+                        <outlet property="orderConfirmationLabel" destination="WmB-ki-h9M" id="8Qf-FZ-Ngq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3O9-aF-RXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FL0-w7-2C9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="8223" y="2957"/>
         </scene>
         <!--Expiration-->
         <scene sceneID="tr5-45-BAv">
@@ -2166,6 +2248,6 @@ Gift-wrap available</string>
         <image name="visa" width="121" height="79"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hYi-kg-NQs"/>
+        <segue reference="wEV-WC-gHM"/>
     </inferredMetricsTieBreakers>
 </document>

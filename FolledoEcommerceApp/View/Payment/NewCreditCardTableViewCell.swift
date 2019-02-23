@@ -49,7 +49,7 @@ class NewCreditCardTableViewCell: UITableViewCell { //PB ep91 1mins
    
 //MARK: IBActions
    @IBAction func addCardTapped(_ sender: Any) { //PB ep91 13mins
-      guard let nameOnCard = nameOnCardTextField.text, let cardNumber = cardNumberTextField.text, let expMonth = Int16((expMonthButton.titleLabel?.text)!), let expYear = Int16((expYearButton.titleLabel?.text)!) else { return } //PB ep91 26mins unwrap
+	guard let nameOnCard:String = nameOnCardTextField.text, let cardNumber: String = cardNumberTextField.text, let expMonth = Int16((expMonthButton.titleLabel?.text)!), let expYear = Int16((expYearButton.titleLabel?.text)!) else { return } //PB ep91 26mins unwrap
       
       let creditCard = CustomerService.addCreditCard(forCustomer: self.customer!, nameOnCard: nameOnCard, cardNumber: cardNumber, expMonth: Int(expMonth), expYear: Int(expYear)) //PB ep91 27mins
      

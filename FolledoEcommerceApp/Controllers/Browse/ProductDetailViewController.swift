@@ -49,6 +49,12 @@ class ProductDetailViewController: UIViewController, UIScrollViewDelegate { //PB
       self.scrollView.delegate = self
       setCartView() //PB ep80 13mins
    }
+	
+	override func viewWillAppear(_ animated: Bool) { //PB ep96 18mins
+		super.viewWillAppear(animated) //PB ep96 18mins
+		
+		self.cartLabel.text = "\(self.shoppingCart.totalItem())" //PB ep96 19mins to update it after order confirmation because it doesnt update it
+	}
    
    
 //MARK: Private

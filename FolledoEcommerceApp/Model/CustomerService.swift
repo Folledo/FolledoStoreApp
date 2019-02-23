@@ -92,7 +92,7 @@ struct CustomerService { //PB ep84 1mins
       creditCard.expMonth = Int16(expMonth) //PB ep91 18mins make sure it is at Int16
       creditCard.expYear = Int16(expYear) //PB ep91 18mins
       
-      switch String(describing: cardNumber.first) { //PB ep91 19mins
+      switch cardNumber.first { //PB ep91 19mins
       case "3": //PB ep91 19mins
          creditCard.type = CreditCardType.Amex.rawValue //PB ep91 19mins if cardNumber begins with 3, the creditCard type will be the CreditCardType.Amex's rawValue
       case "4":
